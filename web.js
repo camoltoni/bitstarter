@@ -2,12 +2,13 @@ var express = require('express');
 
 var app = express.createServer(express.logger());
 
-var strhi = ''
-fs.readFileSync('./index.html', function(err, data) {
-    if(err) throw err;
-    strhi = data.toString()
-}
+
 app.get('/', function(request, response) {
+  var fs = require('fs');
+  fs.readFileSync('index.html', function(err, data) {
+    if(err) throw err;
+    var strhi = data.toString();
+  });
   response.send('Hello World from ' + strhi);
 });
 

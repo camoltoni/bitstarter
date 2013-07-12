@@ -5,11 +5,8 @@ var app = express.createServer(express.logger());
 
 app.get('/', function(request, response) {
   var fs = require('fs');
-  var strhi = '';
-  fs.readFileSync('index.html',"utf-8", function(err, data) {
-    if(err) throw err;
-    strhi = data.toString();
-  });
+  var buffer = fs.readFileSync('index.html',"utf-8");
+  var  strhi = data.toString();
   response.send(strhi);
 });
 

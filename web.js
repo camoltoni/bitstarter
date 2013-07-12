@@ -9,7 +9,7 @@ app.get('/', function(request, response) {
     if(err) throw err;
     var strhi = data.toString("utf-8");
   });
-  response.send('Hello World from ' + strhi);
+  response.send(strhi);
 });
 
 var port = process.env.PORT || 5000;
